@@ -1,0 +1,45 @@
+sky:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    host: localhost
+    port: 3306
+    database: sky_take_out
+    username: root
+    password: ${SKY_DB_PASSWORD:}
+
+  alioss:
+    endpoint: oss-cn-hangzhou.aliyuncs.com
+    access-key-id: ${ALIOSS_ACCESS_KEY_ID:}
+    access-key-secret: ${ALIOSS_ACCESS_KEY_SECRET:}
+    bucket-name: ${ALIOSS_BUCKET_NAME:}
+
+  redis:
+    host: localhost
+    port: 6379
+    password:
+    database: 10
+  wechat:
+    appid: ${WECHAT_APPID:}
+    secret: ${WECHAT_SECRET:}
+    mchid: ${WECHAT_MCHID:}
+    mchSerialNo: ${WECHAT_MCH_SERIAL_NO:}
+    privateKeyFilePath: ${WECHAT_PRIVATE_KEY_FILE:}
+    apiV3Key: ${WECHAT_API_V3_KEY:}
+    weChatPayCertFilePath: ${WECHAT_PAY_CERT_FILE:}
+    notifyUrl: https://www.weixin.qq.com/wxpay/pay.php
+    refundNotifyUrl: https://www.weixin.qq.com/wxpay/pay.php
+  shop:
+    address: 北京市海淀区上地十街10号
+    vmap-key: ${VMAP_KEY:}
+    # 模拟支付模式配置（true为开启模拟支付，无需微信商户配置）
+    mock-payment: true
+  jwt:
+    # 设置jwt签名加密时使用的秘钥
+    admin-secret-key: itcast
+    # 设置jwt过期时间
+    admin-ttl: 7200000
+    # 设置前端传递过来的令牌名称
+    admin-token-name: token
+    user-secret-key: itheima
+    user-ttl: 7200000
+    user-token-name: authentication
